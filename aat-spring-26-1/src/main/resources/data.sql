@@ -1,23 +1,36 @@
+create database ej263;
+use ej263;
 
-CREATE TABLE peliculas (
+
+CREATE TABLE cajeros (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(250),
-    calificacion INT
 );
-CREATE TABLE salas (
+CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(250),
-    pelicula INT,
-    FOREIGN KEY (pelicula) REFERENCES peliculas(id)
+    precio INT,
 );
-INSERT INTO peliculas (nombre,calificacion) VALUES
-    ('Harry potter',7),
-    ('Kill bill vol 2',15),
-    ('Los puentes de madison',3);
+CREATE TABLE maquinas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    piso INT,
+);
+
+INSERT INTO maquinas (piso) VALUES
+    (1),
+    (2),
+    (3),
+    (4);
+
+INSERT INTO cajeros (nombre) VALUES
+    ('Luis ortigues'),
+    ('Fernando Bosé'),
+    ('Bernabeth Andreu'),
+    ('Andres bolivar');
    
-INSERT INTO salas (nombre,pelicula) VALUES
-    ('Sala peixos',2),
-    ('Sala Bonaventura',3),
-   ('Sala Napoleo',2),
-    ('Sala Isla del tesoro',1),
-     ('Sala pirata barbanegra',1);
+INSERT INTO productos (nombre,precio) VALUES
+    ('Radiocasette',35),
+    ('Calendario Gatos 2024',8),
+   ('Camiseta azul',17),
+    ('Pantalones vaqueros',25),
+     ('Pinturas oleo',18);
